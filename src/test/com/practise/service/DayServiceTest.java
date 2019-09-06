@@ -1,9 +1,6 @@
 package com.practise.service;
 
-import com.practise.commands.Command;
-import com.practise.commands.SwipeInCommand;
 import com.practise.enums.TypeOfDay;
-import com.practise.model.Smartcard;
 import com.practise.util.DateUtil;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -20,12 +17,10 @@ public class DayServiceTest {
 
     @Test
     public void test_getToDayType(){
-        Mockito.doReturn(DayOfWeek.WEDNESDAY).when(Mockito.spy(dayService)).getDayOfTheWeek();
+        Mockito.doReturn(DayOfWeek.WEDNESDAY).when(Mockito.spy(dayService)).today();
         TypeOfDay day=dayService.getToDayType();
         assert day.equals(TypeOfDay.WEEKDAY);
 
-//        Command c = new SwipeInCommand(new Smartcard());
-//        c.execute();
 
     }
 }

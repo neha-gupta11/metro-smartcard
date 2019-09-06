@@ -1,10 +1,21 @@
 package com.practise.model;
 
+import com.practise.commands.Command;
+
 public class Station {
     private Long id;
     private String name;
     private Station previousStation;
     private Station nextStation;
+    private Command command;
+
+    public Station(Command command){
+        this.command = command;
+    }
+
+    public void swap(){
+        command.execute();
+    }
 
     public String getName() {
         return name;

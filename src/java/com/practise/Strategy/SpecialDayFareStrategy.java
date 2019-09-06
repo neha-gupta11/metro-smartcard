@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class SpecialDayFareStrategy implements FareStrategy {
 
-     private SpecialDayService specialDayService;
+     private SpecialDayService specialDayService = new SpecialDayService();
     @Override
     public float getFare() {
         float farePerStation=0;

@@ -2,7 +2,7 @@ package com.practise.model;
 
 public class Smartcard {
     private float minBal;
-    private float balance;
+    private float balance=100;
     private boolean inJourney=false;
     private Station swipeInStation;
 
@@ -38,6 +38,7 @@ public class Smartcard {
         this.swipeInStation = swipeInStation;
     }
 
+
     public Smartcard(float minBal, float balance) {
         this.minBal = minBal;
         this.balance = balance;
@@ -54,4 +55,6 @@ public class Smartcard {
     public void payFare(float fare){
         this.balance-=fare;
     }
+
+    public Smartcard(){}
 }

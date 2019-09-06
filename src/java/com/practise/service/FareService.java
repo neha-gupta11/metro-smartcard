@@ -6,7 +6,7 @@ import com.practise.Strategy.WeeklyFareStrategy;
 
 public class FareService {
 
-    private SpecialDayService specialDayService;
+    private SpecialDayService specialDayService = new SpecialDayService();
 
     public float getTotalFare(int stationCount){
         FareStrategy fareStrategy;

@@ -7,7 +7,7 @@ public class SpecialDayService {
     public Boolean isTodaySpecialDay(){
 
         //This is an mocked implementation
-        return true;
+        return false;
     }
 
     public SpecialDay getTodaysDetail(){

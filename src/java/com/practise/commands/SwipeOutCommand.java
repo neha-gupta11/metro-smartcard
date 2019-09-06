@@ -9,22 +9,27 @@ public class SwipeOutCommand implements Command {
 
     private Smartcard smartcard;
 
-    private StationService stationService;
-    private FareService fareService;
+    private int stationsTravelled;
 
-    public SwipeOutCommand(Smartcard smartcard) {
+    private FareService fareService = new FareService();
+
+    public SwipeOutCommand(Smartcard smartcard,int stationsTravelled) {
         this.smartcard = smartcard;
+        this.stationsTravelled = stationsTravelled;
     }
 
 
     @Override
-    public void execute(Station station) {
-        int stationsTravelled=stationService.countStationsBetween(smartcard.getSwipeInStation(),station);
+    public void execute() {
+        //int stationsTravelled=stationService.countStationsBetween(smartcard.getSwipeInStation(),this.station);
         float totalFare=fareService.getTotalFare(stationsTravelled);
+        System.out.println(totalFare);
         if(smartcard.getBalance()<totalFare){
             throw new RuntimeException("Insufficient Balance, please get a topup first.");
         }
         smartcard.payFare(totalFare);
-        smartcard.setSwipeInStation(null);
+
+        System.out.println("Printing card balance after checkout...."+smartcard.getBalance());
+
     }
 }

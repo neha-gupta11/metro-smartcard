@@ -6,9 +6,9 @@ import java.util.Objects;
 
 public class StationService {
 
-    public Station getCurrentStation() {
+    /*public Station getCurrentStation() {
         return new Station();
-    }
+    }*/
 
     public int countStationsBetween(Station swipeIn, Station swipeOut) {
         int count = countStations(swipeIn, swipeOut);
