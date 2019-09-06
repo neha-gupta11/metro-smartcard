@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class DateUtil {
 
-    public TypeOfDay getToDayType(){
+    public static TypeOfDay getToDayType(){
         TypeOfDay todayDayType= TypeOfDay.WEEKDAY;
         DayOfWeek dayOfWeek=LocalDate.now().getDayOfWeek();
         switch (dayOfWeek){
