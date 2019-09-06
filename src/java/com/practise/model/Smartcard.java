@@ -43,7 +43,15 @@ public class Smartcard {
         this.balance = balance;
     }
 
-    public void swipeIn(){
+    public Boolean isLowBal(){
+        return this.getBalance()<this.getMinBal();
+    }
 
+    public void recharge(float topup){
+        this.balance+=topup;
+    }
+
+    public void payFare(float fare){
+        this.balance-=fare;
     }
 }
